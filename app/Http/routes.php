@@ -13,18 +13,19 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', [
+      'as' => 'home',
+      'uses' => 'HomeController@index'
+    ]);
 
 });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', [
-      'as' => 'home',
-      'uses' => 'HomeController@index']);
+    Route::get('/dashboard', [
+      'as' => 'dashboard',
+      'uses' => 'DashboardController@index']);
 
     Route::get('auth/twitter', [
       'as' => 'twitter.redirect',

@@ -75,7 +75,7 @@ class TwitterController extends Controller
       $twitterDetails->user_id = $user->id;
       $twitterDetails->save();
 
-      return redirect()->route('home');
+      return redirect()->route('dashboard');
 
     } catch (\Exception $e) {
       // dump($e);

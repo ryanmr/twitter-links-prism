@@ -33,6 +33,10 @@ class User extends Authenticatable
       return $this->hasOne('App\TwitterDetails');
     }
 
+    public function tweets() {
+      return $this->hasMany('App\Tweet');
+    }
+
     public function connected() {
       return isset($this->account);
     }
