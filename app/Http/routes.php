@@ -18,3 +18,24 @@ Route::group(['middleware' => ['web']], function () {
     });
 
 });
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', [
+      'as' => 'home',
+      'uses' => 'HomeController@index']);
+
+    Route::get('auth/twitter', [
+      'as' => 'twitter.redirect',
+      'uses' => 'TwitterController@redirectToProvider'
+    ]);
+    Route::get('auth/twitter/callback', [
+      'as' => 'twitter.callback',
+      'uses' => 'TwitterController@handleProviderCallback'
+    ]);
+    Route::get('auth/twitter/error', [
+      'as' => 'twitter.error',
+      'uses' => 'TwitterController@handleError'
+    ]);
+});

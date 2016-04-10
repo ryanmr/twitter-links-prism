@@ -23,4 +23,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function account() {
+      return $this->hasOne('App\TwitterAccount');
+    }
+
+    public function details() {
+      return $this->hasOne('App\TwitterDetails');
+    }
+
+    public function connected() {
+      return isset($this->account);
+    }
+
 }

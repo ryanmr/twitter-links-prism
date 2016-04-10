@@ -14,6 +14,21 @@ return [
     |
     */
 
+
+    /**
+     * Twitter API services.
+     */
+    // 'twitter' => [
+    //   'consumer_key' => env('TWITTER_CONSUMER_KEY'),
+    //   'consumer_secret' => env('TWITTER_CONSUMER_SECRET')
+    // ],
+    'twitter' => [
+      'client_id' => env('TWITTER_CONSUMER_KEY'),
+      'client_secret' => env('TWITTER_CONSUMER_SECRET'),
+      'redirect' => 'http://twitter-links.app/auth/twitter/callback'
+    ],
+
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
