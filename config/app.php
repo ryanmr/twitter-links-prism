@@ -156,7 +156,17 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Third Party Service Providers.
+         */
+
         Laravel\Socialite\SocialiteServiceProvider::class,
+
+        /**
+         * Local Service Providers.
+         */
+
+        App\Providers\TwitterServiceProvider::class,
 
     ],
 
