@@ -1,27 +1,26 @@
-# Laravel PHP Framework
+Twitter Links Prism
+===================
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Prism is a little app that watches your timeline and will help you write a link blog.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+How It Works
+------------
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+This is in the conceptual stage right now. This might change, but this is the idea.
 
-## Official Documentation
+Prism is a multi-tenant app, which means multiple users *can* use the same installation, but that is optional.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Prism will watch your tweets after you register with the app, and then log into your Twitter account so Prism can receive a token for your Twitter account. Then, Prism will periodically check your Twitter timeline for new Tweets that have a single link embedded within them. When it finds those Tweets, it will put them in the *Ideas* section.
 
-## Contributing
+There are *three* section:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+- Ideas: the initial raw Tweets with links
+- Drafts: Ideas/Tweets that have been developed upon, basically, you accepted these links as a seed for an actual post, and you are in the process of writing more about your thought
+- Posts: the finalized link blog items, complete with links and your thoughts, and easy access to the original tweets
 
-## Security Vulnerabilities
+Why?
+----
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+I like Laravel, and I wanted to experiment with the Twitter API. Plus, since I began working on [The Nexus](http://thenexus.tv) CMS development, I have learned more concepts that Laravel offers, and I wanted to give those a try.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Will this ever get done? Maybe. We'll see. Keep pestering me.
