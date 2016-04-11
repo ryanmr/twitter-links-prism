@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
+use App\Services\Twitter;
+
 class TwitterServiceProvider extends ServiceProvider
 {
     /**
@@ -35,6 +37,10 @@ class TwitterServiceProvider extends ServiceProvider
             config('services.twitter.client_id'),
             config('services.twitter.client_secret')
           );
+        });
+
+        $this->app->bind('App\Services\Twitter', function($app) {
+          return new Twitter($app->make(TwitterOAuth::class));
         });
     }
 }
